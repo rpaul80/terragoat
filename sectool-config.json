@@ -1,0 +1,21 @@
+{
+  "auth": {
+    "ACCESS_KEY": "123456",
+    "SECRET_KEY": "234567"
+  },
+  "tests": [
+    {
+      "category": "cloud_misconfiguration",
+      "policy": {
+        "action": "alert",
+        "options": {
+          "sensitive_data": "on",
+          "aws": "on",
+          "azure": "on",
+          "gcp": "on"
+        }
+      },
+      "name": "tfsec"
+    }
+  ]
+}
