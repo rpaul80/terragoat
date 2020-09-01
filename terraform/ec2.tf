@@ -169,11 +169,11 @@ resource "aws_flow_log" "vpcflowlogs" {
 }
 
 resource "aws_s3_bucket" "flowbucket" {
-  bucket = "${local.resource_prefix.value}-flowlogs"
+  bucket = "${local.resource_prefix.value}-flowlogs-2"
   force_destroy = true
 
   tags = {
-    Name        = "${local.resource_prefix.value}-flowlogs"
+    Name        = "${local.resource_prefix.value}-flowlog-2"
     Environment = local.resource_prefix.value
   }
 }
