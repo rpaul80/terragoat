@@ -12,6 +12,21 @@ resource "aws_s3_bucket" "data" {
   }
 }
 
+resource "aws_s3_bucket" "financials2" {
+  # bucket is not encrypted
+  # bucket does not have access logs
+  # bucket does not have versioning
+  # should trigger
+  bucket        = "${local.resource_prefix.value}-financials2"
+  acl           = "private"
+  force_destroy = true
+  tags = {
+    Name        = "${local.resource_prefix.value}-financials2"
+    Environment = local.resource_prefix.value
+  }
+
+}
+
 resource "aws_s3_bucket_object" "data_object" {
   bucket        = aws_s3_bucket.data.id
   key           = "customer-master.xlsx"
